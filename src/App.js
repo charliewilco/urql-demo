@@ -1,6 +1,6 @@
-import React from "react";
-import { Provider, Client, Connect, query, mutation } from "urql";
-import { Row, Col as Column, Block } from "jsxstyle";
+import React from 'react'
+import { Provider, Client, Connect, query, mutation } from 'urql'
+import { Row, Col as Column, Block } from 'jsxstyle'
 import ListView from './ListView'
 import NewPost from './NewPost'
 import Loading from './Loading'
@@ -12,7 +12,7 @@ mutation($title: String!, $description: String!, $imageUrl: String!) {
     id
   }
 }
-`;
+`
 
 const removePostMutation = `
 mutation($id: ID!) {
@@ -20,7 +20,7 @@ mutation($id: ID!) {
     id
   }
 }
-`;
+`
 
 const mutations = {
   deletePost: mutation(removePostMutation),
@@ -36,10 +36,10 @@ query {
     description
   }
 }
-`;
+`
 
 const client = new Client({
-  url: `https://api.graph.cool/simple/v1/cjevxmcsg1io30152vypz1jnu`,
+  url: `https://api.graph.cool/simple/v1/cjevxmcsg1io30152vypz1jnu`
 })
 
 export default () => (
@@ -50,7 +50,7 @@ export default () => (
           <Block flex={1} padding={8}>
             <NewPost onSubmit={addPost} />
           </Block>
-          <Column  flex={2} height="100%" padding={8}>
+          <Column flex={2} height="100%" padding={8}>
             {loaded ? (
               error ? (
                 <ErrorMessage {...error} />

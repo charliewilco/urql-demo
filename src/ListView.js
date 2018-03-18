@@ -1,5 +1,5 @@
 import React from 'react'
-import { Block } from "jsxstyle"
+import { Block } from 'jsxstyle'
 import Card from './Card'
 import ErrorMessage from './ErrorMessage'
 
@@ -13,4 +13,4 @@ export default ({ data, deletePost }) => (
       <ErrorMessage message="Data has no length" />
     )}
   </Block>
-);
+)
