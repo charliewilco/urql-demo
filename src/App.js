@@ -22,9 +22,22 @@ mutation($id: ID!) {
 }
 `
 
+const updatePostMutation = `
+mutation($id: ID!, $title: String!, $description: String!) {
+  updatePost(
+    id: $id
+    title: $title
+    description: $description
+  ) {
+    id
+  }
+}
+`
+
 const mutations = {
   deletePost: mutation(removePostMutation),
-  addPost: mutation(addPostMutation)
+  addPost: mutation(addPostMutation),
+  updatePost: mutation(updatePostMutation)
 }
 
 const PostQuery = `
@@ -32,7 +45,7 @@ query {
   allPosts {
     id
     title
-    imageUrl,
+    imageUrl
     description
   }
 }
@@ -45,7 +58,7 @@ const client = new Client({
 export default () => (
   <Provider client={client}>
     <Connect query={query(PostQuery)} mutation={mutations}>
-      {({ loaded, data, error, addPost, deletePost }) => (
+      {({ loaded, data, error, addPost, deletePost, updatePost }) => (
         <Row maxWidth={768} margin="auto" justifyContent="space-between" flex={1}>
           <Block flex={1} padding={8}>
             <NewPost onSubmit={addPost} />
@@ -55,7 +68,11 @@ export default () => (
               error ? (
                 <ErrorMessage {...error} />
               ) : (
-                <ListView data={data.allPosts} deletePost={deletePost} />
+                <ListView
+                  data={data.allPosts}
+                  updatePost={updatePost}
+                  deletePost={deletePost}
+                />
               )
             ) : (
               <Loading color="#147AAB" />

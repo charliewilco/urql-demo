@@ -10,6 +10,10 @@ body,
   height: 100%;
 }
 
+html {
+  background: #f7f7f7;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -28,7 +32,6 @@ img {
 
 .Root {
   flex: 1;
-  background: #f7f7f7;
 }
 
 .Description {

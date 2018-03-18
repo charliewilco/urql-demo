@@ -8,6 +8,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
+    "serve": "^6.5.3",
     "urql": "^0.2.1"
   },
   "devDependencies": {
@@ -16,11 +17,16 @@
     "prettier": "^1.11.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
+    "dev": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "deploy": "now && now alias",
     "precommit": "lint-staged"
+  },
+  "now": {
+    "alias": "urql-example.now.sh"
   },
   "prettier": {
     "printWidth": 95,
@@ -32,6 +38,9 @@
     "jsxBracketSameLine": true
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
