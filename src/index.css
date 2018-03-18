@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+.Root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  font-style: italic;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.Root {
+  flex: 1;
+  background: #F7F7F7;
+}
+
+.Description {
+  display: block;
+  width: 100%;
+  resize: none;
+  border: 1px solid #e9ebee;
+  margin-bottom: 8px;
+}
+
+.FormWrapper {
+  padding: 8px;
+}
+
+.Title {
+  display: block;
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #e9ebee;
+}
+
+.Form,
+.Card {
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 0 2px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.12);
+}
+
+.Card h3 {
+  font-size: 17.6px;
+  margin-bottom: 8px;
+}
+
+.Card p, .Card dd {
+  font-size: 13px;
+}
+
+.Button {
+  background: #147AAB;
+  padding: 4px 8px;
+  appearance: none;
+  border: 0;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  color: white;
+  border-radius: 4px;
+}
+
+.NotButton {
+  appearance: none;
+  background: none;
+  border: 0;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: .625;
+  margin-right: 8px;
+}
