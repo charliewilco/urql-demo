@@ -24,7 +24,7 @@ export default class Card extends Component {
       <Block marginBottom={16} className="Card">
         <Row alignItems="center" marginBottom={8} padding={8}>
           <ImageLoader source={imageUrl} />
-          <Block marginLeft={8}>
+          <Block marginLeft={8} flex={1}>
             {
               edit ? (
                 <Fragment>

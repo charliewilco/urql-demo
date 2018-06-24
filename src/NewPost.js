@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row } from 'jsxstyle'
+import { Row, Block } from 'jsxstyle'
 import ImageLoader from './ImageLoader'
 
 const initialState = {
@@ -27,17 +27,28 @@ export default class NewPost extends Component {
         <div className="FormWrapper">
           <Row alignItems="center" marginBottom={8}>
             <ImageLoader source={imageUrl} style={{ marginRight: 8 }} />
+            <Block flex={3}>
+              <label htmlFor='prime-title' className='InputWrapper'>
+                <span className='Label'>Title</span>
+
             <input
+              name='prime-title'
               className="Title"
               value={title}
               onChange={({ target }) => this.setState({ title: target.value })}
             />
+</label>
+          </Block>
           </Row>
+          <label htmlFor='prime-description' className='InputWrapper'>
+          <span className='Label'>Description</span>
           <textarea
             className="Description"
+            name='prime-description'
             value={description}
             onChange={({ target }) => this.setState({ description: target.value })}
           />
+        </label>
         </div>
         <Row justifyContent="flex-end" padding={8} borderTop="1px solid #e9ebee">
           <button className="Button" onClick={this.addPost}>
